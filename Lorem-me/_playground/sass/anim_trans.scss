@@ -1,0 +1,49 @@
+.btn {
+    font-size: 30px;
+    text-decoration: none;
+    //트랜지션을 주면 마우스 올라갈때 부드럽게 적용할수 있다
+    //세가지 요소가 전부다 전환되는데 5초동안!
+    transition: all .5s;
+
+    &:hover {
+        font-size: 50px;
+        text-decoration: underline;
+        opacity: .2;
+    }
+}
+
+//animation
+//@keyframes : css
+//transform은 위치를 바꾸거나(translate), 크기를 바꾸는 속성(scale)이다.
+//%는 전체시간의 ~
+//해당요소의 기본값이 0,0임
+//헷갈리는거: x는 원래알던거랑 똑같음/ y는 위쪽이 -고 아래쪽이 +다
+@keyframes anim1 {
+    0% {
+        opacity: .2;
+        transform: translate(100px,-30px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .5;
+    }
+}
+
+//animation-fill-mode: forwards; (딜레이가 없을때) 애니메이션 끝난 상태 남아있음
+//animation-fill-mode: backwards; (딜레이가 지정됐을때) 딜레이가 있으니까 그때 처음 키프레임 상태로 남아있게함 0%상태로 시작함
+#box1 {
+    //box1에 anim1을 적용하겟다
+    animation-name: anim1;
+    //애니메이션이 지속될 시간
+    animation-duration: 5s;
+    //애니메이션 끝났을때 마지막 상태100%로 유지하고싶을때
+    animation-fill-mode: forwards;
+    //애니메이션 여러번
+    animation-iteration-count: 3;
+    //애니메이션 몇초있다가 시작하는것
+    animation-delay: 3s;
+}

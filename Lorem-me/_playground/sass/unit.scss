@@ -1,0 +1,32 @@
+//px ,em,rem,vw,vh
+// em,rem,vw,vh :상대적크기
+
+//em: 해당 요소의 지정된 폰트사이즈
+//예를 들어 박스1의 폰트사이즈가 20px이면 1em==20px이 된다.
+
+//rem
+//html에 지정된 폰트사이즈가 1rem이다.
+
+//vw(viewport-width)
+
+
+//vh(vewport-height)
+
+html {
+    //font-size: 10px; //1rem
+    font-size: 20px; //10px=1rem
+}
+
+#box1 {
+    width: 80vw;
+    height: 50vh;
+    font-size: 3rem; //1em=30px
+    width: 25rem;
+    background-color: #aaa;
+}   
+
+#box2 {
+    font-size: 2rem;
+    width: 25rem;
+    background-color: #777;
+}

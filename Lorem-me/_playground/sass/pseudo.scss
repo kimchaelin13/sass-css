@@ -1,0 +1,53 @@
+#box {
+    background-color: #00f;
+    width: 300px;
+    height: 300px;
+    color:#fff;
+
+    //이 두개의 엘리먼트를 가상의 element라고 한다.
+    &::before {
+        content:'before';
+        display: block;
+    }
+
+    &::after {
+        content: 'after';
+        display: block;
+        background-color: #ff0;
+    }
+}
+
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: block;
+        clear: left;
+    }
+}
+
+.box-parent {
+
+    padding: 20px;
+    background-color: #00f;
+
+    .box-child {
+        width: 200px;
+        height: 200px;
+        background-color: #f00;
+        border: 1px solid #ff0;
+        float: left;
+        // margin-right: 40px;
+    }
+    //lastchild속성, 마지막 속성을 제외한 지식에 적용하는 속성
+    .box-child:not(:last-child) {
+        margin-right: 40px;
+    }
+    // .clearfix {
+    //     //부모가 자식영역을 인지못하는걸 하게함(flex요소 무시해서)
+    //     clear: left;
+    // }
+    
+    // 이때 after속성 이용하면 html에 div추가할 필요없이 가상요소 활용해서 할수있다
+    // mixin으로 처리
+    @include clearfix();
+}

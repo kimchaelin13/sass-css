@@ -1,0 +1,162 @@
+.nav {
+
+    &-checkbox {
+        display: none;
+
+    }   
+
+    &-button {
+        background-color: #c4e3ff;
+        width: 7rem;
+        height: 6rem;
+        position: fixed;
+        top: 7rem;
+        right: 8rem;
+        z-index: 2000; //라벨보이게
+        border-radius: 2px;
+        box-shadow: 0 1rem 1rem rgba(#000,0.1);
+        
+        text-align: center;
+    }
+
+    &-bg {
+        background-image: radial-gradient($color-primary,$color-secondary);
+        width: 7rem;
+        height: 6rem;
+        position: fixed;
+        top: 7rem;
+        right: 8rem;
+        z-index: 1000; //라벨보이게
+        border-radius: 2px;
+
+        transition: all .8s;
+    }
+
+    //체크박스가 체크가 됐을때 같은 형제요소(~)를 나타나게됨
+    //같은 형제요소인 &-bg를 바꿔서 체크가 됐는지 안됐는지 확인할 수 있다
+    &-checkbox:checked ~ &-bg {
+        transform: scale(80);
+    }
+
+    //ICON
+    &-icon {
+        margin-top: 3rem;
+        position: relative;
+        
+        &::before {
+            top: -0.8rem;
+        }
+        
+        &::after {
+            top: 0.8rem;
+        }
+        
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+            
+        }
+        
+        &, &::before, &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: #333;
+            display: inline-block;
+        }
+    }
+
+    &-button:hover &-icon::before {
+        top: -1rem;
+    }
+
+    &-button:hover &-icon::after {
+        top: 1rem;
+    }
+
+    &-checkbox:checked ~ &-button &-icon {
+        //가운데 선 사라지고
+        background-color: transparent;
+    }
+
+    &-checkbox:checked ~ &-button &-icon::before {
+        top:0;
+        transform: rotate(135deg);
+    }
+
+    &-checkbox:checked ~ &-button &-icon::after {
+        top:0;
+        transform: rotate(-135deg);
+    }
+
+    //nav-body
+    &-body {
+        position: fixed;
+        top: 0;
+        left: -120%;
+        height: 100vh;
+        width: 100vw;
+        // background-color:rgb(211, 170, 219);
+        z-index: 1500;
+        opacity: 0;
+        transition: all .8s;
+
+    }   
+
+    &-list {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        list-style: none;
+        // background-color: #aaa;
+        width: 100%;
+        text-align: center;
+    }
+
+    &-item {
+
+    }
+
+    &-link {
+        display: inline-block;
+        font-size: 3rem;
+        font-weight: 300;
+        padding: 1rem 2rem;
+        color: $color-white;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        transition: all .4s;
+
+        background-image: linear-gradient(
+            120deg,
+            transparent 0%,
+            transparent 50%,
+            $color-white 50%
+        );
+        
+        background-size: 220%;
+
+        &:hover {
+            color: $color-primary;
+            background-position: 100%;
+            transform: translateX(1rem);
+        }
+
+        span {
+            //블락 요소가 되야 마진을 줄 수 있기 때문에
+            //인라인블럭으로 하고,
+            display: inline-block;
+            margin-right: 1.5rem;
+        }
+    }
+
+    &-checkbox:checked ~ &-body {
+        opacity: 1;
+        left: 0;
+    }
+
+
+}

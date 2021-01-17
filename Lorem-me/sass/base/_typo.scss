@@ -1,0 +1,26 @@
+h2 {
+    padding: 1rem 0;
+    font-size: 2.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    //텍스트 그라데이션 하는법
+    //배경 그라데이션주고,텍스트에만 그라데이션 먹게 webkit하고
+    //그다음에 기본적으로 글자에 채워져있는 검정을 투명하게 
+    background: linear-gradient(left, $color-primary, $color-secondary);
+    -webkit-background-clip: text ;
+    -webkit-text-fill-color: transparent;
+
+    transition: all .5s;
+
+    &:hover {
+        padding-left: 1.5rem;
+    }
+}
+
+h3 {
+    padding: .5rem 0; //위아래
+    color: $color-grey-dark;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}

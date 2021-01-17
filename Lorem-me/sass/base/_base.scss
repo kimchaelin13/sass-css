@@ -1,0 +1,24 @@
+// 구글폰트 - 나눔고딕, Lato
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300|Nanum+Gothic:400,700,800&subset=korean');
+
+// Icon Font
+// https://material.io/icons
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+* {
+    margin: 0;
+    padding: 0;
+    //box-sizing : 보더박스로 주게 되면 넓이,안쪽여백 모두 포함해서 계산됨
+    box-sizing: border-box;
+}
+
+//rem을 사용하기 위해 html font-size를 정한다
+html {
+    font-size: 62.5%; //16px의 62.5%sms 10px, 10px는 1rem
+
+}
+
+body {
+    padding: 3rem; //안쪽여백
+    font-family: 'Nanum Gothic', sans-serif;
+}

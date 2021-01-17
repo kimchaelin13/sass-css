@@ -1,0 +1,65 @@
+header {
+
+    width: 100%;
+    height: 90vh;
+    //css로 그라데이션(google css gradient generator)
+    background-image: linear-gradient(
+        to right,
+        $color-primary 0%,
+        $color-secondary 100%
+    ),url(../images/header-image.jpg);
+    //파란색, 이미지 합성
+    background-blend-mode: multiply;
+    //contain:잘리더라도~ cover:요소꽉차게 이미지키우기
+    background-size: cover;
+    //기준을 부모로 설정해야(position=relative)
+    //부모좌측상단이 0이 되게됨
+    position: relative;
+
+    #logo-text {
+        position: absolute;
+        left: 7rem; //왼쪽에 70px 떨어져있음
+        top: 4rem; //위로부터 40px
+        font-size: 5.6rem; //56px
+        text-transform: uppercase;
+        font-family: 'Lato', sans-serif; //가장 가는 lato, snas-serif :고딕
+        font-weight: 100;
+        color: $color-white;
+        //글자간격 줄어들게 해줌
+        letter-spacing: -0.1rem;
+
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-iteration-count: 5;
+        animation-delay: 2s;
+        animation-fill-mode: backwards; //애니메 0%에서 시작함
+    }
+    
+    #header-text { 
+        position: absolute;
+        left: 7rem;
+        bottom: 23%;
+        color: $color-white;
+        letter-spacing: -0.1rem;
+        font-weight: 700;
+
+        &-main {
+            font-size: 7.2rem;
+            line-height: 7.2rem;
+
+            animation-name: moveInRight;
+            animation-duration: 1s;
+            animation-delay: 1s;
+            animation-fill-mode: backwards; //애니메 0%에서 시작함
+        }
+        &-sub{
+            margin-top: 3rem;
+            font-size: 2.4rem;
+
+            animation-name: moveInLeft;
+            animation-duration: 1s;
+            animation-delay: 1.5s;
+            animation-fill-mode: backwards; //애니메 0%에서 시작함
+        }
+    }
+}
