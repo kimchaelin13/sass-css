@@ -1,0 +1,32 @@
+{
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+              // ~:해당 sass파일
+              //sass파일이 있는 상위폴더에 css폴더로
+              //플레이그라운드에서만 테스트 할수있게할라고
+            "savePath": "~/../css"
+        },
+    ],
+    
+    "liveSassCompile.settings.excludeList": [
+        "**/node_modules/**",
+        ".vscode/**"
+    ],
+    "liveSassCompile.settings.generateMap": true,
+    "liveSassCompile.settings.autoprefix": [
+        "> 1%",
+        "last 2 versions"
+    ],
+    "editor.codeActionsOnSave": null,
+    "workbench.colorTheme": "Night Owl",
+    "[json]": {
+    
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    }
+  }
+  

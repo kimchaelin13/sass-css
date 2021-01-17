@@ -1,0 +1,33 @@
+@keyframes moveInLeft {
+    0% {
+        opacity: .1;
+        transform: translateX(-8rem);
+    }
+
+    80% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: .1;
+        //마지막이 기본위치 (X축상에서 -에서 시작해서)
+        transform: translateX(10rem);
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
